@@ -1,9 +1,8 @@
-
- - name: Add a new user named secops
+   - name: Add a new user named secops
      user:
           name={{username}}
           password={{ devops_password }}
- 
+   
    - name: Add devops user to the sudoers
      copy:
           dest: "/etc/sudoers.d/{{username}}"
