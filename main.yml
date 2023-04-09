@@ -1,13 +1,4 @@
 ---
-
-- hosts: all
-  become: true
-  gather_facts: false
-  tasks:
-    - include_role:
-        name: add_devops_user
-        tasks_from: add_user.yml
-        
 - hosts: all
   become: true
   gather_facts: false
