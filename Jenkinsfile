@@ -5,7 +5,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'master', url: 'https://github.com/devops4solutions/Ansible-Sample-Application-Deployment.git'
+                git branch: 'master', url: 'git@github.com:mrinalnath3/Ansible-Sample-Application-Deployment.git'
              
           }
         }
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                 
-               def tfHome = tool name: 'Ansible'
+               def tfHome = tool name: 'Ansible2'
                 env.PATH = "${tfHome}:${env.PATH}"
                  sh 'ansible --version'
                     
@@ -32,7 +32,7 @@ pipeline {
                  
              
                
-               sh "ansible-playbook main.yml -i inventories/dev/hosts --user jenkins --key-file ~/.ssh/id_rsa -e '@configs/dev.yml'"
+               sh "ansible-playbook main.yml -i /home/devops/inventory.txt -become:yes -e '@configs/dev.yml'"
 
                
             
