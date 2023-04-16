@@ -3,7 +3,6 @@
      user:
           name={{username}}
           password={{ ansible1_password }}
- 
    - name: Add ansible1 user to the sudoers
      copy:
           dest: "/etc/sudoers.d/{{username}}"
