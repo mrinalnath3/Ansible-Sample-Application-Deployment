@@ -1,9 +1,10 @@
-- name: Add a new user named ansible1
+ 
+   - name: Add a new user named devops
      user:
           name={{username}}
-          password={{ ansible1_password }}
+          password={{ devops_password }}
  
-   - name: Add ansible1 user to the sudoers
+   - name: Add devops user to the sudoers
      copy:
           dest: "/etc/sudoers.d/{{username}}"
           content: "{{username}}  ALL=(ALL)  NOPASSWD: ALL"
